@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-release-deploy
+spec:
+  selector:
+    matchLabels:
+      app: front-release
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: front-release
+    spec:
+      containers:
+      - name: front-release-container
+        image: penguin1234/mind-detector-front:stable
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: myregistrykey
