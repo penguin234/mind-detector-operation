@@ -23,3 +23,5 @@ spec:
         name: model-engine
         ports:
         - containerPort: 7000
+      imagePullSecrets:
+      - name: myregistrykey
