@@ -6,14 +6,14 @@ spec:
   selector:
     matchLabels:
       app: model
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
         app: model
     spec:
       containers:
-      - image: penguin1234/md-model-api:1.0.1
+      - image: penguin1234/md-model-api:1.0.2
         imagePullPolicy: Always
         name: model-api
         ports:
