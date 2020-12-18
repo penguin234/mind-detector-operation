@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apis
+spec:
+  selector:
+    matchLabels:
+      app: apis
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: apis
+    spec:
+      containers:
+      - name: main_api
+        image: penguin1234/md-apis:0.1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: myregistrykey
