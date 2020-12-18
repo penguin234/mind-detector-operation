@@ -18,6 +18,12 @@ spec:
         name: model-api
         ports:
         - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+        initialDelaySeconds: 50
+        periodSeconds: 10
       - image: penguin1234/md-model:1.0.0
         imagePullPolicy: Always
         name: model-engine
