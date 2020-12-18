@@ -13,7 +13,7 @@ spec:
         app: apis
     spec:
       containers:
-      - name: main_api
+      - name: main-api
         image: penguin1234/md-apis:0.1.0
         imagePullPolicy: Always
         ports:
