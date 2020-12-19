@@ -13,15 +13,10 @@ spec:
         app: model
     spec:
       containers:
-      - image: penguin1234/md-model-api:1.0.2
+      - image: penguin1234/md-model-api:1.0.3
         imagePullPolicy: Always
         name: model-api
         ports:
         - containerPort: 5000
-      - image: penguin1234/md-model:1.0.0
-        imagePullPolicy: Always
-        name: model-engine
-        ports:
-        - containerPort: 7000
       imagePullSecrets:
       - name: myregistrykey
