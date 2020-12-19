@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apis
+  name: util-center
 spec:
   selector:
     matchLabels:
-      app: apis
-  replicas: 4
+      app: util-center
+  replicas: 2
   template:
     metadata:
       labels:
-        app: apis
+        app: util-center
     spec:
       containers:
-      - name: main-api
-        image: penguin1234/md-apis:0.1.5
+      - name: getcenters
+        image: penguin1234/mind-detector-utils-getcenters:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

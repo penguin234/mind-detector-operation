@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apis
+  name: util-avgget
 spec:
   selector:
     matchLabels:
-      app: apis
-  replicas: 4
+      app: util-avgget
+  replicas: 2
   template:
     metadata:
       labels:
-        app: apis
+        app: util-avgget
     spec:
       containers:
-      - name: main-api
-        image: penguin1234/md-apis:0.1.5
+      - name: getaverage
+        image: penguin1234/mind-detector-utils-getavg:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
