@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: model
+  name: util-avgset
 spec:
   selector:
     matchLabels:
-      app: model
-  replicas: 4
+      app: util-avgset
+  replicas: 3
   template:
     metadata:
       labels:
-        app: model
+        app: util-avgset
     spec:
       containers:
-      - image: penguin1234/md-model-api:1.0.4
+      - name: setaverage
+        image: penguin1234/mind-detector-utils-postavg:1.0.0
         imagePullPolicy: Always
-        name: model-api
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
       imagePullSecrets:
       - name: myregistrykey
