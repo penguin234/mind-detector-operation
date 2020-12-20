@@ -14,9 +14,15 @@ spec:
     spec:
       containers:
       - name: getcenters
-        image: penguin1234/mind-detector-utils-getcenters:1.0
+        image: penguin1234/mind-detector-utils-getcenters:1.0.2
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /all
+            port: 8080
+      initialDelaySeconds: 3
+      periodSeconds: 3
       imagePullSecrets:
       - name: myregistrykey

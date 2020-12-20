@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: main-api
-        image: penguin1234/md-apis:0.1.5
+        image: penguin1234/md-apis:0.1.13
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
