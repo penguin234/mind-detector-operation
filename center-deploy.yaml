@@ -22,7 +22,7 @@ spec:
           httpGet:
             path: /all
             port: 8080
-        initialDelaySeconds: 10
-        periodSeconds: 3
+          initialDelaySeconds: 10
+          periodSeconds: 3
       imagePullSecrets:
       - name: myregistrykey
