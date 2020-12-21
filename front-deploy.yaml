@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: front-release-container
-        image: penguin1234/mind-detector-front:stable
+        image: osy0056/mind-detector-front:1.2
         imagePullPolicy: Always
         ports:
         - containerPort: 80
