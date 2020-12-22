@@ -18,5 +18,11 @@ spec:
         name: model-api
         ports:
         - containerPort: 5000
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 3
       imagePullSecrets:
       - name: myregistrykey
